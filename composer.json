@@ -1,0 +1,10 @@
+{
+    "name": "iskandar/todo-app",
+    "type": "n",
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "."
+        ]
+    }
+}
