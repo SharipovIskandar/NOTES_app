@@ -117,15 +117,14 @@ class Bot
 
     private function prepareTexts(array $tasks): string
     {
-        $text    = '';
-        $counter = 1;
-        for ($task = 0, $taskMax = count($tasks); $task < $taskMax; $task++) {
-            $status = $tasks[$task]['status'] === 0 ? '🟩' : '✅';
-            $text   .= $status." ".$counter + $task.". {$tasks[$task]['text']}\n";
+        $text = '';
+        foreach ($tasks as $index => $task) {
+            $status = $task['status'] === 0 ? '🟩' : '✅';
+            $text .= "{$status} " . ($index + 1) . ". {$task['text']}\n";
         }
-
         return $text;
     }
+
 
     private function prepareButtons(array $tasks): false|string
     {

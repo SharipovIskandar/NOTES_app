@@ -1,11 +1,10 @@
 <?php
 
 
-//$user = new User();
+$user = new User();
 
-//$newUser = $user->create();
+$newUser = $user->create();
 
-//var_dump($newUser);
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,11 +18,7 @@
 <div class="container">
     <div class="row d-flex justify-content-center">
         <div class="col-4">
-
-
-
-
-            <form action="/router" method="post">
+            <form action="/register" method="post">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="email" name="email">
@@ -34,7 +29,6 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit (Отправить)</button>
             </form>
-
         </div>
     </div>
 </div>

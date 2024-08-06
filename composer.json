@@ -1,7 +1,9 @@
 {
     "name": "iskandar/todo-app",
     "type": "n",
-    "require": {},
+    "require": {
+      "ext-pdo": "*"
+    },
     "autoload": {
         "classmap": [
             "."

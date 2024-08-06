@@ -5,6 +5,7 @@ declare(strict_types=1);
 $bot    = new Bot($_ENV['TOKEN']);
 $router = new Router();
 
+
 if (isset($router->getUpdates()->message)) {
     $message = $router->getUpdates()->message;
     $chatId  = $message->chat->id;

@@ -20,12 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $newTask      = $task->add($router->getUpdates()->text, 35);
+    $text = $router->getUpdates()->text;
+    $userId = 1; // Bu qiymat dinamik bo'lishi mumkin, talabga qarab o'zgartiring.
+    $newTask = $task->add($text, $userId);
     $responseText = $newTask ? 'New task has been added' : 'Something went wrong';
     $router->sendResponse($responseText);
-
     return;
 }
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'PATCH') {
     echo 'Resource '.$router->getResourceId().' updated';
