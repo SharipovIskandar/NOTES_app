@@ -18,13 +18,16 @@ error_reporting(E_ALL);
         <div class="col-8">
             <?php
 
-//            require "view/todo-list.php";
+            require 'view/partials/navbar.php';
 
             echo "<hr class='border border-2 opacity-50'>";
 
+            require 'view/todo-list.php';
             require 'view/new-todo-form.php';
 
+
             ?>
+
         </div>
     </div>
 </div>

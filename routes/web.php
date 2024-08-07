@@ -11,19 +11,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $taskText = $_POST['text'] ?? '';
     if ($taskText) {
         $task->add($taskText);
+        header('Location: /todos');
     }
 }
 
 if (isset($_GET['complete'])) {
     $task->complete((int)$_GET['complete']);
+    header('Location: /todos');
+
 }
 
 if (isset($_GET['uncompleted'])) {
     $task->uncompleted((int)$_GET['uncompleted']);
+    header('Location: /todos');
+
 }
 
 if (isset($_GET['delete'])) {
     $task->delete((int)$_GET['delete']);
+    header('Location: /todos');
 }
 
 $router->get("/", fn() => require "view/pages/home.php");

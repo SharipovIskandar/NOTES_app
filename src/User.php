@@ -61,6 +61,7 @@ class User
             $stmt->bindParam(':password', $password);
             $stmt->execute();
             $row = $stmt->fetch();
+            $_SESSION['user'] = $email;
             echo $row ? header("Location: /") : 'Something went wrong';
 
         }

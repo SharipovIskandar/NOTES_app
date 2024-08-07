@@ -11,16 +11,15 @@ class Task
         $this->pdo  = DB::connect();
     }
 
-    public function add(string $text, int $userId): bool
+    public function add(string $text, int $userId = 1): bool
     {
         $status = false;
-        $stmt   = $this->pdo->prepare("INSERT INTO todos (text, status, user_id) VALUES (:text, :status, :userId)");
+        $stmt = $this->pdo->prepare("INSERT INTO todos (text, status, user_id) VALUES (:text, :status, :userId)");
         $stmt->bindParam(':text', $text);
         $stmt->bindParam(':status', $status, PDO::PARAM_BOOL);
         $stmt->bindParam(':userId', $userId);
         return $stmt->execute();
     }
-
     public function getAll(): false|array
     {
         return $this->pdo->query("SELECT * FROM todos")->fetchAll(PDO::FETCH_OBJ);
