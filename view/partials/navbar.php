@@ -20,8 +20,14 @@
             <a href="/login" class="btn btn-outline-primary mx-2">Login</a>
             <a href="/register" class="btn btn-outline-success">Register</a>
             <?php
-            else: echo $_SESSION['user']?> <a href="/logout">Log out</a>
-            <?php endif ?>;
+            else:{
+                echo $_SESSION['user'];
+                echo "<a href=/logout>Log out</a>";
+                echo " | ";
+                echo "<a href=https://t.me/NT_T0_d0_bot> Connect to Telegram </a>";
+            }
+
+                endif ?>;
         </div>
     </div>
 </nav>
